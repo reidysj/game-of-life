@@ -26,7 +26,6 @@ j-n, j-n-1, j-n+1, j-1, j+1, j+n-1, j+n, j+n+1
 * Stop forgetting that this pattern will allow you to compare and alter without goofing things * 
 - Array of objects?
 {
-    type: [center, corner, top, right, bottom or left edge],
     isAlive: [true or false]
 }
 

@@ -179,7 +179,7 @@ function cellLogic(workingArr, index, livingNeighbors) {
   }
 }
 
-function setCells(workingArr, currentArr, gridSize) {
+export function setCells(workingArr, currentArr, gridSize) {
   let index = 0;
   const gridSquared = gridSize ** 2;
   while (index < workingArr.length) {
@@ -219,7 +219,7 @@ function setCells(workingArr, currentArr, gridSize) {
       cellLogic(workingArr, index, livingNeighbors);
     }
     //righjt edge
-    else if ((index + 1) % n === 0) {
+    else if ((index + 1) % gridSize === 0) {
       const livingNeighbors = rightEdgeNeighbors(index, gridSize, currentArr);
       cellLogic(workingArr, index, livingNeighbors);
     }
@@ -227,7 +227,6 @@ function setCells(workingArr, currentArr, gridSize) {
     else if (index >= gridSquared - gridSize + 1 || index <= gridSquared - 2) {
       const livingNeighbors = bottomEdgeNeighbors(index, gridSize, currentArr);
       cellLogic(workingArr, index, livingNeighbors);
-
     } 
     //middle pieces
     else {
