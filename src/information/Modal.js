@@ -7,8 +7,6 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  List,
-  ListItem,
   Text
 } from "@chakra-ui/core";
 import {text} from '../utils/modalTexts'

@@ -4,7 +4,7 @@ import {useInterval} from './utils/useInterval'
 import Grid from './grid'
 import Information from './information'
 import Form from './form'
-import {ThemeProvider, CSSReset, Flex, Text, Heading, Box} from '@chakra-ui/core'
+import {ThemeProvider, CSSReset, Flex, Text, Heading} from '@chakra-ui/core'
 
 function App() {
   const initialCell = {
