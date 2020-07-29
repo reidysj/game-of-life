@@ -10,6 +10,7 @@ function App() {
   const initialCell = {
     isAlive: false
 }
+const [color, setColor] = useState('#000000')
 const [gridSize, setGridSize] = useState(25)
 const [interval, setInterval] = useState(700)
 const [viewingArray, setViewingArray] = useState(Array(gridSize*gridSize).fill(initialCell))
@@ -20,6 +21,7 @@ const handleSubmit = (e, inputs) => {
   e.preventDefault()
   setGridSize(inputs.gridSize)
   setInterval(inputs.interval)
+  setColor(inputs.color)
 }
 
 const handleClick = (cell, cellIndex) => {
@@ -70,7 +72,7 @@ const handleRandom = () => {
       <Text textAlign='center'>Count: {count}</Text>
       <Flex direction='row-reverse' justify='space-evenly'>
       <Form isRunning={isRunning} handleSubmit={handleSubmit} handleRandom={handleRandom} handleClear={handleClear} handleRunSimulation={handleRunSimulation}/>
-      <Grid gridSize={gridSize} viewingArray={viewingArray} handleClick={handleClick}/>
+      <Grid gridSize={gridSize} viewingArray={viewingArray} handleClick={handleClick} color={color}/>
       </Flex>
       <Information />
 

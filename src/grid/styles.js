@@ -9,5 +9,5 @@ export const GridBody = styled.div`
 `
 export const Cell = styled.div`
     border: 1px solid black;
-    background-color: ${props => props.isAlive ? 'black' : 'white'};
+    background-color: ${props => props.isAlive ? props.color : 'white'};
 `
