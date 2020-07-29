@@ -5,6 +5,8 @@ import { one, two, three, four, five, six, seven, eight } from "./mathHelpers";
 function centerNeighbors(j, n, currentArr) {
   let livingNeighbors = 0;
   if (one(j, n, currentArr)) {
+    if(j === 52){
+    }
     livingNeighbors++;
   }
   if (two(j, n, currentArr)) {
@@ -169,17 +171,21 @@ function bottomEdgeNeighbors(j, n, currentArr) {
 
 function cellLogic(workingArr, index, livingNeighbors) {
   if (workingArr[index].isAlive) {
-    if (livingNeighbors !== 2 || livingNeighbors !== 3) {
+    if (livingNeighbors !== 2 && livingNeighbors !== 3) {
       workingArr[index].isAlive = false;
     }
   } else {
     if (livingNeighbors === 3) {
-      workingArr[index].isAlive = true;
+      workingArr[index] = {isAlive: true}
     }
   }
+  return workingArr
+    
 }
 
-export function setCells(workingArr, currentArr, gridSize) {
+
+export function setCells(currentArr, gridSize) {
+  let workingArr = JSON.parse(JSON.stringify(currentArr))
   let index = 0;
   const gridSquared = gridSize ** 2;
   while (index < workingArr.length) {
@@ -224,7 +230,7 @@ export function setCells(workingArr, currentArr, gridSize) {
       cellLogic(workingArr, index, livingNeighbors);
     }
     //bottom edge
-    else if (index >= gridSquared - gridSize + 1 || index <= gridSquared - 2) {
+    else if (index >= gridSquared - gridSize + 1) {
       const livingNeighbors = bottomEdgeNeighbors(index, gridSize, currentArr);
       cellLogic(workingArr, index, livingNeighbors);
     } 
@@ -235,4 +241,5 @@ export function setCells(workingArr, currentArr, gridSize) {
     }
     index++;
   }
+  return workingArr
 }
