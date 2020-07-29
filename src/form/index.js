@@ -5,15 +5,23 @@ import {Button, Input, Flex, Select, Text} from '@chakra-ui/core'
 const Form = ({handleSubmit, handleRunSimulation, isRunning, handleRandom, handleClear}) => {
     const [inputs, setInputs] = useState({
         gridSize: 25,
-        interval: 700
+        interval: 700,
+        color: '#000000'
     })
 
     const handleChange = e => {
-        setInputs({
-            ...inputs,
-            [e.target.name]: Number(e.target.value)
-        })
-        console.log(e.target.value)
+        if(e.target.name === 'color'){
+            setInputs({
+                ...inputs,
+                color: e.target.value
+            })
+        } else {
+            
+            setInputs({
+                ...inputs,
+                [e.target.name]: Number(e.target.value)
+            })
+        }
     }
 
 
@@ -32,6 +40,8 @@ const Form = ({handleSubmit, handleRunSimulation, isRunning, handleRandom, handl
             </Select>
             <Text textAlign='center'>Speed</Text>
             <Input type='number' name='interval' onChange={handleChange} value={inputs.interval}></Input>
+            <Text textAlign='center'>Cell Color</Text>
+            <Input type='color' name='color' onChange={handleChange} value={inputs.color} />
             <Button width='100%' variantColor='green' type='submit' my='1rem'>Submit</Button>
         </form>
         </Flex>
