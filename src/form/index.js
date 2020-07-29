@@ -1,0 +1,41 @@
+import React, {useState} from 'react'
+import {Button, Input, Flex, Select, Text} from '@chakra-ui/core' 
+
+
+const Form = ({handleSubmit, handleRunSimulation, isRunning, handleRandom, handleClear}) => {
+    const [inputs, setInputs] = useState({
+        gridSize: 25,
+        interval: 700
+    })
+
+    const handleChange = e => {
+        setInputs({
+            ...inputs,
+            [e.target.name]: Number(e.target.value)
+        })
+        console.log(e.target.value)
+    }
+
+
+    return(
+        <Flex direction='column' justify='space-around'>
+        <Button variantColor={isRunning ? 'red' : 'green'} variant='outline' onClick={e => handleRunSimulation(e)}>{!isRunning? 'Start Simulation' : 'Stop Simulation'}</Button>
+        <Button variantColor='blue' variant='outline' onClick={handleRandom}>Random Grid</Button>
+        <Button variantColor='blue' variant='outline' onClick={handleClear} >Clear Grid</Button>
+        <form onSubmit={e => handleSubmit(e, inputs)}>
+            <Text textAlign='center'>Grid Size</Text>
+            <Select name='gridSize' onChange={handleChange}>
+                <option value='25'>25x25</option>
+                <option value='35'>35x35</option>
+                <option value='40'>40x40</option>
+                <option value='50'>50x50</option>
+            </Select>
+            <Text textAlign='center'>Speed</Text>
+            <Input type='number' name='interval' onChange={handleChange} value={inputs.interval}></Input>
+            <Button width='100%' variantColor='green' type='submit' my='1rem'>Submit</Button>
+        </form>
+        </Flex>
+    )
+}
+
+export default Form

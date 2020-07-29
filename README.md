@@ -43,10 +43,10 @@
     [x] Use double buffering to update the grid
     [x] Either wrap around to the far side or assume all edge cells are permanently dead.
         [] Make sure this has been documented.
-[] Implement at least three custom features (more options in original readme)
+[x] Implement at least three custom features (more options in original readme)
     [x] Allow users to change the dimension of the grid
     [x] Allow users to specify the speed of the simulation
-    [] Add an option that creates a random initial configuration that users can run.
+    [x] Add an option that creates a random initial configuration that users can run.
 [] About page
     [] Include a section/seperate page/modal/whatever that describes the two main rules
 [] Stretch goals
