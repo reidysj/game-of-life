@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import {GridBody, Cell} from './styles'
 
 const Grid = ({gridSize, viewingArray, handleClick, color}) => {
