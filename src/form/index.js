@@ -40,6 +40,7 @@ const Form = ({handleSubmit, handleRunSimulation, isRunning, handleRandom, handl
         <Button mx='5px' variantColor="blue" fontSize='sm'  variant="outline" onClick={e => handleSteps(e, inputs.steps)} isDisabled={isRunning} width='65%'>{`Advance ${inputs.steps} Generation${inputs.steps > 1 ? 's' : ''}`}</Button>
         </Flex>
         <Button variantColor='blue' variant='outline' onClick={handleClear} >Clear Grid</Button>
+        <hr />
         <form onSubmit={e => handleSubmit(e, inputs)}>
             <Text>Grid Size</Text>
             <Select name='gridSize' onChange={handleChange} textAlign='center'>

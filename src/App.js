@@ -14,7 +14,7 @@ import {
   Heading,
   Image,
 } from "@chakra-ui/core";
-import {makeSquare, makeHwss, makeLwss, makeMwss, makeSpinner, makeToad, makeBeacon, makeGlider, makeTub, makeBoat, makeLoaf, makeHive, makeDeca} from './utils/specialClicks'
+import {makeSquare, makeHwss, makeLwss, makeMwss, makeSpinner, makeToad, makeBeacon, makeGlider, makeTub, makeBoat, makeLoaf, makeHive, makeDeca, makePulsar} from './utils/specialClicks'
 
 function App() {
   const initialCell = {
@@ -84,6 +84,9 @@ function App() {
           break;
         case 'hwss':
           setViewingArray(makeHwss(cellIndex, gridSize, viewingArray))
+          break;
+        case 'pulsar':
+          setViewingArray(makePulsar(cellIndex, gridSize, viewingArray))
           break;
         default:
           setViewingArray(

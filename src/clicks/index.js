@@ -26,6 +26,7 @@ const Clicks = ({setTypeClick}) => {
             <Button variant='solid' variantColor='teal' width='50%' onClick={e => setTypeClick('toad')}>Toad</Button>
             <Button variant='solid' variantColor='teal' width='50%' onClick={e => setTypeClick('beacon')}>Beacon</Button>
             <Button variant='solid' variantColor='teal' width='50%' onClick={e => setTypeClick('deca')}>P-Deca</Button>
+            <Button variant='solid' variantColor='teal' width='50%' onClick={e => setTypeClick('pulsar')}>Pulsar</Button>
             </>
         ):
         stampType === 'ship' ? (
