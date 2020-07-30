@@ -23,7 +23,10 @@ const handleSubmit = (e, inputs) => {
   setGridSize(inputs.gridSize)
   setInterval(inputs.interval)
   setColor(inputs.color)
-  setViewingArray(Array(inputs.gridSize*inputs.gridSize).fill(initialCell))
+  if(gridSize !== inputs.gridSize){
+    setViewingArray(Array(inputs.gridSize*inputs.gridSize).fill(initialCell))
+
+  }
 }
 
 const handleClick = (cell, cellIndex) => {
