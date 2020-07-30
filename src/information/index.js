@@ -20,7 +20,7 @@ const Information = () => {
       <Flex width="80%" margin="10px auto" direction="column" textAlign="center">
           <Flex direction={['column', 'column', 'column', 'row']}justify='space-evenly'>
         {options.map((option) => (
-          <Button variant='outline' variantColor='teal' onClick={(e) => handleChoice(option.name)} my='5px'>
+          <Button variant='outline' variantColor='teal' onClick={(e) => handleChoice(option.name)} my='5px' key={option.name}>
             {option.text}
           </Button>
         ))}
