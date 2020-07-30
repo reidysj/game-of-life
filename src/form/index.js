@@ -26,7 +26,7 @@ const Form = ({handleSubmit, handleRunSimulation, isRunning, handleRandom, handl
 
 
     return(
-        <Flex direction='column' justify='space-around' backgroundColor='white' padding='2.5vw' border='1px solid black'>
+        <Flex direction='column' justify='space-around' backgroundColor='white' padding='2.5vw' border='1px solid black' width={['95vw', '95vw', '95vw', 'auto']} margin={['20px auto', '20px auto', '20px auto', 'inherit']} >
         <Button variantColor={isRunning ? 'red' : 'green'} variant='outline' onClick={e => handleRunSimulation(e)}>{!isRunning? 'Start Simulation' : 'Stop Simulation'}</Button>
         <Button variantColor='blue' variant='outline' onClick={handleRandom}>Random Grid</Button>
         <Button variantColor='blue' variant='outline' onClick={handleClear} >Clear Grid</Button>

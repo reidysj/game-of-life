@@ -17,10 +17,10 @@ const Information = () => {
       <Heading as="h2" fontSize="1.8rem" textAlign="center" my=".5rem">
         A Cellular Automaton Simulation
       </Heading>
-      <Flex width="80%" margin="0 auto" direction="column" textAlign="center">
-          <Flex justify='space-evenly'>
+      <Flex width="80%" margin="10px auto" direction="column" textAlign="center">
+          <Flex direction={['column', 'column', 'column', 'row']}justify='space-evenly'>
         {options.map((option) => (
-          <Button variant='outline' variantColor='teal' onClick={(e) => handleChoice(option.name)}>
+          <Button variant='outline' variantColor='teal' onClick={(e) => handleChoice(option.name)} my='5px'>
             {option.text}
           </Button>
         ))}
