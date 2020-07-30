@@ -14,7 +14,7 @@ const Information = () => {
 
   return (
     <>
-      <Heading as="h2" fontSize="1.8rem" textAlign="center" my=".5rem">
+      <Heading as="h2" fontSize="1.8rem" textAlign="center" my="2rem">
         A Cellular Automaton Simulation
       </Heading>
       <Flex width="80%" margin="10px auto" direction="column" textAlign="center">
