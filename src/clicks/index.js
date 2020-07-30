@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
+import {connect} from 'react-redux'
+import {setTypeClick} from '../redux/actions'
 import {Button, Menu, MenuButton, MenuList, MenuItem, Flex} from '@chakra-ui/core'
 
 const Clicks = ({setTypeClick}) => {
     const [stampType, setStampType] = useState('')
-
 
 
     return(
@@ -49,5 +50,4 @@ const Clicks = ({setTypeClick}) => {
     )
 
 }
-
-export default Clicks
+export default connect(null, {setTypeClick})(Clicks)
