@@ -7,9 +7,9 @@ const Clicks = ({setTypeClick}) => {
 
 
     return(
-        <Flex width='20%'direction='column' justify='space-evenly' align='center'>
+        <Flex width={['100%', '100%', '100%','20%']}direction={['row', 'row', 'row','column']} justify='space-evenly' align='center'>
         <Menu>
-            <MenuButton as={Button} variant='outline' variantColor='blue' rightIcon='chevron-down' width='100%'>
+            <MenuButton as={Button} variant='outline' variantColor='blue' rightIcon='chevron-down' width='90%'>
                 {stampType === 'still' ? 'Still Lifes' : stampType === 'osc' ? 'Oscilators' : stampType === 'ship' ? 'Spaceships' : 'Stamp Types'}
             </MenuButton>
             <MenuList>
