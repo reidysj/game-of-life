@@ -3,8 +3,9 @@ import {setCells} from './utils/setCells'
 import {useInterval} from './utils/useInterval'
 import Grid from './grid'
 import Information from './information'
+import image from './utils/life.svg'
 import Form from './form'
-import {ThemeProvider, CSSReset, Flex, Text, Heading} from '@chakra-ui/core'
+import {ThemeProvider, CSSReset, Flex, Text, Heading, Image} from '@chakra-ui/core'
 
 function App() {
   const initialCell = {
@@ -22,6 +23,7 @@ const handleSubmit = (e, inputs) => {
   setGridSize(inputs.gridSize)
   setInterval(inputs.interval)
   setColor(inputs.color)
+  setViewingArray(Array(inputs.gridSize*inputs.gridSize).fill(initialCell))
 }
 
 const handleClick = (cell, cellIndex) => {
@@ -31,6 +33,7 @@ const handleClick = (cell, cellIndex) => {
 }
 
 const handleClear = () => {
+  setCount(0)
   setViewingArray(Array(gridSize*gridSize).fill(initialCell))
   if(isRunning){
       setIsRunning(false)
@@ -64,10 +67,11 @@ const handleRandom = () => {
     }
     setViewingArray(random)
 }
+
   return (
     <ThemeProvider>
       <CSSReset />
-
+    <Image src={image} height='100vh' width='100vw' zIndex='-1000'position='absolute' opacity='.05' overflow='hidden'/>
       <Heading textAlign='center'>Conway's Game of Life</Heading>
       <Text textAlign='center'>Count: {count}</Text>
       <Flex direction='row-reverse' justify='space-evenly'>
@@ -75,6 +79,7 @@ const handleRandom = () => {
       <Grid gridSize={gridSize} viewingArray={viewingArray} handleClick={handleClick} color={color}/>
       </Flex>
       <Information />
+
 
     </ThemeProvider>
   );
