@@ -37,7 +37,7 @@ const Form = ({handleSubmit, handleRunSimulation, isRunning, handleRandom, handl
                 <option value='15'>15</option>
                 <option value='20'>20</option>
             </Select>
-        <Button mx='5px' variantColor="blue" fontSize='xs'  variant="outline" onClick={e => handleSteps(e, inputs.steps)} isDisabled={isRunning} width='65%'>{`Advance ${inputs.steps} Generation${inputs.steps > 1 ? 's' : ''}`}</Button>
+        <Button mx='5px' variantColor="blue" fontSize='sm'  variant="outline" onClick={e => handleSteps(e, inputs.steps)} isDisabled={isRunning} width='65%'>{`Advance ${inputs.steps} Generation${inputs.steps > 1 ? 's' : ''}`}</Button>
         </Flex>
         <Button variantColor='blue' variant='outline' onClick={handleClear} >Clear Grid</Button>
         <form onSubmit={e => handleSubmit(e, inputs)}>
