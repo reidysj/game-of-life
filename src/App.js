@@ -143,14 +143,14 @@ function App() {
       <CSSReset />
       <Image
         src={image}
-        height="100vh"
+        height="98vh"
         width="100vw"
         zIndex="-1000"
         position="absolute"
         opacity=".05"
         overflow="hidden"
       />
-      <Heading textAlign="center">Conway's Game of Life</Heading>
+      <Heading textAlign="center" marginTop='1.2rem'>Conway's Game of Life</Heading>
       <Text textAlign="center">Generation Count: {count}</Text>
       <Flex direction={['column-reverse', 'column-reverse', 'column-reverse', "row-reverse"]} justify="space-evenly">
         <Form
