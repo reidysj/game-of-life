@@ -9,6 +9,7 @@ import TypeMenu from "./TypeMenu";
 
 const Clicks = ({ setTypeClick, typeClick }) => {
   const [stampType, setStampType] = useState("");
+  const [isWide, setIsWide] = useState(false)
 
   return (
     <Flex
@@ -16,10 +17,11 @@ const Clicks = ({ setTypeClick, typeClick }) => {
       direction={["row", "row", "row", "column"]}
       justify="space-evenly"
       align="center"
-      display={["none", "none", "flex", "flex", "flex"]}
+      display='flex'
     >
-      <TypeMenu stampType={stampType} setStampType={setStampType} />
+      <TypeMenu stampType={stampType} setStampType={setStampType} isWide={isWide} setIsWide={setIsWide}/>
       <Button
+        display={['none', 'none', 'auto', 'auto']}
         variant={typeClick === 'cell' ? 'solid' : 'outline'}
         variantColor="teal"
         width="50%"
@@ -29,12 +31,12 @@ const Clicks = ({ setTypeClick, typeClick }) => {
       </Button>
 
       {stampType === "osc" ? (
-        <Oscill setTypeClick={setTypeClick} />
+        <Oscill setTypeClick={setTypeClick} isWide={isWide} setIsWide={setIsWide}/>
       ) : stampType === "ship" ? (
-        <Ships setTypeClick={setTypeClick} />
+        <Ships setTypeClick={setTypeClick} isWide={isWide} setIsWide={setIsWide}/>
       ) : (
         <>
-          <Stills setTypeClick={setTypeClick} />
+          <Stills setTypeClick={setTypeClick} isWide={isWide} setIsWide={setIsWide}/>
         </>
       )}
     </Flex>

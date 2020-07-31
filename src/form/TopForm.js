@@ -53,7 +53,7 @@ const TopForm = ({
       >
         Random Grid
       </Button>
-      <Flex>
+      <Flex justify='space-between'>
         <Select
           name="steps"
           onChange={(e) => setSteps(e.target.value)}
@@ -66,7 +66,7 @@ const TopForm = ({
           <option value="20">20</option>
         </Select>
         <Button
-          mx="5px"
+          // marginLeft= "1vw"
           variantColor="blue"
           fontSize="sm"
           variant="outline"

@@ -1,7 +1,9 @@
 import React from "react";
 import { Menu, MenuButton, MenuList, MenuItem, Button } from "@chakra-ui/core";
 
-const TypeMenu = ({ stampType, setStampType }) => {
+const TypeMenu = ({ stampType, setStampType, setIsWide, isWide }) => {
+
+
   return (
     <Menu>
       <MenuButton
@@ -9,8 +11,8 @@ const TypeMenu = ({ stampType, setStampType }) => {
         variant="outline"
         variantColor="blue"
         rightIcon="chevron-down"
-        // width="90%"
-        width='50%'
+        width={['97%', '97%', '97%', '70%']}
+        display={[isWide ? 'none':'inherit', isWide ? 'none':'inherit', isWide ? 'none': 'inherit', 'inherit']}
       >
         {stampType === "still"
           ? "Still Lifes"
@@ -20,7 +22,7 @@ const TypeMenu = ({ stampType, setStampType }) => {
           ? "Spaceships"
           : "Stamp Types"}
       </MenuButton>
-      <MenuList width='inherit'>
+      <MenuList width='inherit' onClick={_ => setIsWide(!isWide)}>
         <MenuItem onClick={(_) => setStampType("still")}>Still Lifes</MenuItem>
         <MenuItem onClick={(_) => setStampType("osc")}>Oscillators</MenuItem>
         <MenuItem onClick={(_) => setStampType("ship")}>Spaceships</MenuItem>
