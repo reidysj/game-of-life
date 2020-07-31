@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button, Flex } from "@chakra-ui/core";
 import TopForm from "./TopForm";
 import BottomForm from "./BottomForm";
 import Selection from "./Selection";
 import {
-  setGridSize,
   setColor,
   setViewingArray,
   setCount,
@@ -18,44 +17,15 @@ const Form = ({
   gridSize,
   setIsRunning,
   setViewingArray,
-  setGridSize,
-  setColor,
-  interval,
-  color,
-  setNewInterval,
   setCount,
 }) => {
-  const [steps, setSteps] = useState(1);
+
 
   const initialCell = {
     isAlive: false,
   };
 
-  const handleChange = (e) => {
-    switch (e.target.name) {
-      case "color":
-        setColor(e.target.value);
-        break;
-      case "gridSize":
-        setGridSize(Number(e.target.value));
-        setCount(0);
-        if (gridSize !== e.target.value) {
-          setViewingArray(
-            Array(e.target.value * e.target.value).fill(initialCell)
-          );
-        }
-        setIsRunning(false)
-        break;
-      case "interval":
-        setNewInterval(e.target.value);
-        break;
-      case "steps":
-        setSteps(e.target.value);
-        break;
-      default:
-        break;
-    }
-  };
+
 
   const handleClear = () => {
     setCount(0);
@@ -76,8 +46,6 @@ const Form = ({
       margin={["20px auto", "20px auto", "20px auto", "inherit"]}
     >
       <TopForm
-        handleChange={handleChange}
-        steps={steps}
         setCount={setCount}
         gridSize={gridSize}
         isRunning={isRunning}
@@ -88,12 +56,8 @@ const Form = ({
         Clear Grid
       </Button>
       <hr />
-      <Selection handleChange={handleChange} />
-      <BottomForm
-        handleChange={handleChange}
-        interval={interval}
-        color={color}
-      />
+      <Selection setIsRunning={setIsRunning}setCount={setCount} setViewingArray={setViewingArray} isRunning={isRunning}/>
+      <BottomForm/>
     </Flex>
   );
 };
@@ -108,7 +72,6 @@ const mStP = (state) => {
 };
 
 export default connect(mStP, {
-  setGridSize,
   setNewInterval,
   setCount,
   setColor,

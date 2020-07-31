@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { setTypeClick } from "../redux/actions";
-import {
-  Button,
-  Flex,
-} from "@chakra-ui/core";
+import { Button, Flex } from "@chakra-ui/core";
 import Oscill from "./Oscill";
 import Ships from "./Ships";
 import Stills from "./Stills";
@@ -21,7 +18,7 @@ const Clicks = ({ setTypeClick }) => {
       align="center"
       display={["none", "none", "flex", "flex", "flex"]}
     >
-        <TypeMenu stampType={stampType} setStampType={setStampType} />
+      <TypeMenu stampType={stampType} setStampType={setStampType} />
       <Button
         variant="solid"
         variantColor="teal"
@@ -32,12 +29,12 @@ const Clicks = ({ setTypeClick }) => {
       </Button>
 
       {stampType === "osc" ? (
-        <Oscill setTypeClick={setTypeClick}/>
+        <Oscill setTypeClick={setTypeClick} />
       ) : stampType === "ship" ? (
-        <Ships setTypeClick={setTypeClick}/>
+        <Ships setTypeClick={setTypeClick} />
       ) : (
         <>
-          <Stills setTypeClick={setTypeClick}/>
+          <Stills setTypeClick={setTypeClick} />
         </>
       )}
     </Flex>
