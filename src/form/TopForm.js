@@ -1,8 +1,8 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Flex, Button, Select } from "@chakra-ui/core";
 import { setCells } from "../utils/setCells";
 import { connect } from "react-redux";
- 
+
 const TopForm = ({
   count,
   setCount,
@@ -36,13 +36,12 @@ const TopForm = ({
     setViewingArray([...hiddenArray]);
   };
 
-
   return (
     <>
       <Button
         variantColor={isRunning ? "red" : "green"}
         variant="outline"
-        onClick={_ => setIsRunning(!isRunning)}
+        onClick={(_) => setIsRunning(!isRunning)}
       >
         {!isRunning ? "Start Simulation" : "Stop Simulation"}
       </Button>
@@ -55,7 +54,11 @@ const TopForm = ({
         Random Grid
       </Button>
       <Flex>
-        <Select name="steps" onChange={e => setSteps(e.target.value)} width="30%">
+        <Select
+          name="steps"
+          onChange={(e) => setSteps(e.target.value)}
+          width="30%"
+        >
           <option value="1">1</option>
           <option value="5">5</option>
           <option value="10">10</option>

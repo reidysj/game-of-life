@@ -17,15 +17,28 @@ const Information = () => {
       <Heading as="h2" fontSize="1.8rem" textAlign="center" marginTop="1.5rem">
         A Cellular Automaton Simulation
       </Heading>
-      <Flex width="80%" margin="10px auto" direction="column" textAlign="center">
-          <Flex direction={['column', 'column', 'column', 'row']}justify='space-evenly'>
-        {options.map((option) => (
-          <Button variant='outline' variantColor='teal' onClick={(e) => handleChoice(option.name)} marginTop='5px' key={option.name}>
-            {option.text}
-          </Button>
-        ))}
-
-          </Flex>
+      <Flex
+        width="80%"
+        margin="10px auto"
+        direction="column"
+        textAlign="center"
+      >
+        <Flex
+          direction={["column", "column", "column", "row"]}
+          justify="space-evenly"
+        >
+          {options.map((option) => (
+            <Button
+              variant="outline"
+              variantColor="teal"
+              onClick={(e) => handleChoice(option.name)}
+              marginTop="5px"
+              key={option.name}
+            >
+              {option.text}
+            </Button>
+          ))}
+        </Flex>
         <RulesModal isOpen={isOpen} onClose={onClose} choice={choice} />
       </Flex>
     </>

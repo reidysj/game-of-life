@@ -1,11 +1,10 @@
 // These are helper functions to replace some simple math logic
 import { one, two, three, four, five, six, seven, eight } from "./mathHelpers";
 
-// TODO: Possibly make it a straight up array with no actual properties? just bools
 function centerNeighbors(j, n, currentArr) {
   let livingNeighbors = 0;
   if (one(j, n, currentArr)) {
-    if(j === 52){
+    if (j === 52) {
     }
     livingNeighbors++;
   }
@@ -176,16 +175,14 @@ function cellLogic(workingArr, index, livingNeighbors) {
     }
   } else {
     if (livingNeighbors === 3) {
-      workingArr[index] = {isAlive: true}
+      workingArr[index] = { isAlive: true };
     }
   }
-  return workingArr
-    
+  return workingArr;
 }
 
-
 export function setCells(currentArr, gridSize) {
-  let workingArr = JSON.parse(JSON.stringify(currentArr))
+  let workingArr = JSON.parse(JSON.stringify(currentArr));
   let index = 0;
   const gridSquared = gridSize ** 2;
   while (index < workingArr.length) {
@@ -233,7 +230,7 @@ export function setCells(currentArr, gridSize) {
     else if (index >= gridSquared - gridSize + 1) {
       const livingNeighbors = bottomEdgeNeighbors(index, gridSize, currentArr);
       cellLogic(workingArr, index, livingNeighbors);
-    } 
+    }
     //middle pieces
     else {
       const livingNeighbors = centerNeighbors(index, gridSize, currentArr);
@@ -241,5 +238,5 @@ export function setCells(currentArr, gridSize) {
     }
     index++;
   }
-  return workingArr
+  return workingArr;
 }

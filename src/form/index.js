@@ -19,13 +19,9 @@ const Form = ({
   setViewingArray,
   setCount,
 }) => {
-
-
   const initialCell = {
     isAlive: false,
   };
-
-
 
   const handleClear = () => {
     setCount(0);
@@ -56,8 +52,13 @@ const Form = ({
         Clear Grid
       </Button>
       <hr />
-      <Selection setIsRunning={setIsRunning}setCount={setCount} setViewingArray={setViewingArray} isRunning={isRunning}/>
-      <BottomForm/>
+      <Selection
+        setIsRunning={setIsRunning}
+        setCount={setCount}
+        setViewingArray={setViewingArray}
+        isRunning={isRunning}
+      />
+      <BottomForm />
     </Flex>
   );
 };

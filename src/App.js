@@ -5,7 +5,7 @@ import Grid from "./grid";
 import Information from "./information";
 import image from "./utils/life.svg";
 import Form from "./form";
-import Click from './clicks'
+import Click from "./clicks";
 import {
   ThemeProvider,
   CSSReset,
@@ -14,15 +14,21 @@ import {
   Heading,
   Image,
 } from "@chakra-ui/core";
-import {connect} from 'react-redux'
-import {setCount, setViewingArray} from './redux/actions'
+import { connect } from "react-redux";
+import { setCount, setViewingArray } from "./redux/actions";
 
-
-function App({ count, gridSize, viewingArray, interval, setViewingArray, setCount, isRunning}) {
-
+function App({
+  count,
+  gridSize,
+  viewingArray,
+  interval,
+  setViewingArray,
+  setCount,
+  isRunning,
+}) {
   useInterval(() => {
     if (isRunning) {
-      setCount(count+1);
+      setCount(count + 1);
       setViewingArray(setCells(viewingArray, gridSize));
     }
   }, interval);
@@ -39,11 +45,21 @@ function App({ count, gridSize, viewingArray, interval, setViewingArray, setCoun
         opacity=".05"
         overflow="hidden"
       />
-      <Heading textAlign="center" marginTop='1.2rem'>Conway's Game of Life</Heading>
+      <Heading textAlign="center" marginTop="1.2rem">
+        Conway's Game of Life
+      </Heading>
       <Text textAlign="center">Generation Count: {count}</Text>
-      <Flex direction={['column-reverse', 'column-reverse', 'column-reverse', "row-reverse"]} justify="space-evenly">
-        <Form/>
-        <Grid/>
+      <Flex
+        direction={[
+          "column-reverse",
+          "column-reverse",
+          "column-reverse",
+          "row-reverse",
+        ]}
+        justify="space-evenly"
+      >
+        <Form />
+        <Grid />
         <Click />
       </Flex>
       <Information />
@@ -51,14 +67,14 @@ function App({ count, gridSize, viewingArray, interval, setViewingArray, setCoun
   );
 }
 
-const mStP = state => {
-  return{
+const mStP = (state) => {
+  return {
     count: state.count,
     gridSize: state.gridSize,
     interval: state.interval,
     isRunning: state.isRunning,
-    viewingArray: state.viewingArray
-  }
-}
+    viewingArray: state.viewingArray,
+  };
+};
 
-export default connect(mStP, {setViewingArray, setCount})(App)
+export default connect(mStP, { setViewingArray, setCount })(App);
