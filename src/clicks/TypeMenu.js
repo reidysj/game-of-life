@@ -9,7 +9,8 @@ const TypeMenu = ({ stampType, setStampType }) => {
         variant="outline"
         variantColor="blue"
         rightIcon="chevron-down"
-        width="90%"
+        // width="90%"
+        width='50%'
       >
         {stampType === "still"
           ? "Still Lifes"
@@ -19,7 +20,7 @@ const TypeMenu = ({ stampType, setStampType }) => {
           ? "Spaceships"
           : "Stamp Types"}
       </MenuButton>
-      <MenuList>
+      <MenuList width='inherit'>
         <MenuItem onClick={(_) => setStampType("still")}>Still Lifes</MenuItem>
         <MenuItem onClick={(_) => setStampType("osc")}>Oscillators</MenuItem>
         <MenuItem onClick={(_) => setStampType("ship")}>Spaceships</MenuItem>

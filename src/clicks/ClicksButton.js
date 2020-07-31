@@ -1,10 +1,11 @@
 import React from "react";
+import {connect} from 'react-redux'
 import { Button } from "@chakra-ui/core";
 
-const ClicksButton = ({ setTypeClick, typeClick, text }) => {
+const ClicksButton = ({ setTypeClick, typeClick, text, stateClick }) => {
   return (
     <Button
-      variant="solid"
+      variant={stateClick === typeClick ? 'solid' : 'outline'}
       variantColor="teal"
       width="50%"
       onClick={(e) => setTypeClick(typeClick)}
@@ -14,4 +15,11 @@ const ClicksButton = ({ setTypeClick, typeClick, text }) => {
   );
 };
 
-export default ClicksButton;
+const mStP = state => {
+  return{
+    stateClick: state.typeClick
+  }
+}
+
+
+export default connect(mStP, {})(ClicksButton)

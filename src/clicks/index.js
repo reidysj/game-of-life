@@ -7,7 +7,7 @@ import Ships from "./Ships";
 import Stills from "./Stills";
 import TypeMenu from "./TypeMenu";
 
-const Clicks = ({ setTypeClick }) => {
+const Clicks = ({ setTypeClick, typeClick }) => {
   const [stampType, setStampType] = useState("");
 
   return (
@@ -20,7 +20,7 @@ const Clicks = ({ setTypeClick }) => {
     >
       <TypeMenu stampType={stampType} setStampType={setStampType} />
       <Button
-        variant="solid"
+        variant={typeClick === 'cell' ? 'solid' : 'outline'}
         variantColor="teal"
         width="50%"
         onClick={(e) => setTypeClick("cell")}
@@ -40,4 +40,11 @@ const Clicks = ({ setTypeClick }) => {
     </Flex>
   );
 };
-export default connect(null, { setTypeClick })(Clicks);
+
+const mStP = state => {
+  return{
+    typeClick: state.typeClick
+  }
+}
+
+export default connect(mStP, { setTypeClick })(Clicks);

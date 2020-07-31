@@ -13,6 +13,7 @@ import {
   Text,
   Heading,
   Image,
+  Link
 } from "@chakra-ui/core";
 import { connect } from "react-redux";
 import { setCount, setViewingArray } from "./redux/actions";
@@ -63,6 +64,10 @@ function App({
         <Click />
       </Flex>
       <Information />
+      <Flex justify='space-evenly' marginTop='4vh'>
+        <Link href='https://sarareidy.me'>Contact Me</Link>
+        <Link href='https://github.com/reidysj'>See My Other Projects</Link>
+      </Flex>
     </ThemeProvider>
   );
 }

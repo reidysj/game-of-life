@@ -1,4 +1,5 @@
 export const options = [
+  { name: 'howTo', text: 'How to Play'},
   { name: "rules", text: "Read the Rules" },
   { name: "cells", text: "Read About Cellular Automata" },
   { name: "turing", text: "Read About Turing Completeness" },
@@ -6,6 +7,10 @@ export const options = [
 ];
 
 export const text = {
+  howTo: {
+    title: "How to Play",
+    text: "There's no 'right' way to play, so just go wild. Start filling in cells by clicking on them, and when you're satisfied, click run simulation. The number of generations that the simulation has gone through will update at the top. There are several ways to fill in cells: simply click to add single cells, click the random grid button on the right for a randomly generated grid, or try one of the stamps on the left. Make sure to check out the other options as well!"
+  },
   rules: {
     title: "Conway's Game of Life",
     text:
