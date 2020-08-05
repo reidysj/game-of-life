@@ -14,7 +14,7 @@ const ClicksButton = ({ setTypeClick, typeClick, text, stateClick, isWide, setIs
   return (
     <Button
       variant={stateClick === typeClick ? 'solid' : 'outline'}
-      variantColor="teal"
+      variantColor="blue"
       width="50%"
       display={[isWide ? 'inherit' : 'none', isWide ? 'inherit': 'none', isWide? 'inherit': 'none', 'inherit']}
       onClick={handleMobile}

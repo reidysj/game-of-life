@@ -10,6 +10,7 @@ const Grid = ({ viewingArray, gridSize, setViewingArray, color }) => {
     <>
       <CUGrid
         margin={["0 auto", "0 auto", "0 auto", "inherit"]}
+        backgroundColor='transparent'
         templateColumns={`repeat(${gridSize}, 1fr)`}
         templateRows={`repeat(${gridSize}, 1fr)`}
         width={["95vw", "95vw", "95vw", "700px"]}

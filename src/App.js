@@ -13,7 +13,6 @@ import {
   Text,
   Heading,
   Image,
-  Link
 } from "@chakra-ui/core";
 import { connect } from "react-redux";
 import { setCount, setViewingArray } from "./redux/actions";
@@ -46,7 +45,7 @@ function App({
         opacity=".05"
         overflow="hidden"
       />
-      <Heading textAlign="center" marginTop="1.2rem">
+      <Heading textAlign="center" marginTop='15px' marginBottom='15px'>
         Conway's Game of Life
       </Heading>
       <Text textAlign="center">Generation Count: {count}</Text>
@@ -64,10 +63,6 @@ function App({
         <Click />
       </Flex>
       <Information />
-      <Flex justify='space-evenly' marginTop='4vh'>
-        <Link href='https://sarareidy.me'>Contact Me</Link>
-        <Link href='https://github.com/reidysj'>See My Other Projects</Link>
-      </Flex>
     </ThemeProvider>
   );
 }

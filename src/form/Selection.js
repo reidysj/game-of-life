@@ -18,7 +18,7 @@ const Selection = ({
 
   return (
     <>
-      <Text>Grid Size</Text>
+      <Text textAlign='center'>Grid Size</Text>
       <Select
         name="gridSize"
         onChange={(e) =>

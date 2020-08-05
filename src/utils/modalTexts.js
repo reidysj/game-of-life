@@ -1,9 +1,9 @@
 export const options = [
   { name: 'howTo', text: 'How to Play'},
-  { name: "rules", text: "Read the Rules" },
-  { name: "cells", text: "Read About Cellular Automata" },
-  { name: "turing", text: "Read About Turing Completeness" },
-  { name: "buffer", text: "Read About Double Buffering" },
+  { name: "rules", text: "The Rules" },
+  { name: "cells", text: "Cellular Automata" },
+  { name: "turing", text: "Turing Completeness" },
+  { name: "buffer", text: "Double Buffering" },
 ];
 
 export const text = {
